@@ -1,0 +1,61 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "enabled_providers": [
+    "ollama"
+  ],
+  "model": "ollama/qwen3.5-4b-16k",
+  "small_model": "ollama/qwen3.5-4b-16k",
+  "autoupdate": false,
+  "share": "disabled",
+  "provider": {
+    "ollama": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Ollama (host)",
+      "options": {
+        "baseURL": "http://host.openshell.internal:11434/v1"
+      },
+      "models": {
+        "qwen3.5-4b-16k": {
+          "name": "qwen3.5-4b-16k",
+          "limit": {
+            "context": 16384,
+            "output": 4096
+          },
+          "options": {
+            "reasoningEffort": "none"
+          }
+        }
+      }
+    }
+  },
+  "permission": {
+    "edit": "allow",
+    "bash": "allow",
+    "webfetch": "deny"
+  },
+  "default_agent": "lab",
+  "agent": {
+    "lab": {
+      "mode": "primary",
+      "description": "샌드박스 실습용 코딩 에이전트",
+      "steps": 8,
+      "temperature": 0,
+      "prompt": "당신은 작업 디렉터리의 파이썬 프로젝트를 고치는 코딩 에이전트입니다. read로 파일을 읽고, edit로 고치고, bash로 테스트를 실행하세요. 테스트가 통과하면 한 줄로 결과를 보고하고 끝내세요.",
+      "tools": {
+        "read": true,
+        "edit": true,
+        "bash": true,
+        "write": false,
+        "glob": false,
+        "grep": false,
+        "list": false,
+        "patch": false,
+        "webfetch": false,
+        "todowrite": false,
+        "todoread": false,
+        "task": false,
+        "skill": false
+      }
+    }
+  }
+}

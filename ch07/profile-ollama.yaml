@@ -1,0 +1,20 @@
+# 게이트웨이 호스트에서 실행 중인 Ollama(OpenAI 호환 API)용 Provider 프로필
+# 자격 증명이 없는 로컬 추론 서버이므로 credentials는 비워 둔다.
+id: ollama-openai
+display_name: Ollama (host)
+description: Host-local Ollama OpenAI-compatible API
+category: inference
+inference_capable: true
+credentials: []
+endpoints:
+  - host: host.openshell.internal
+    port: 11434
+    protocol: rest
+    enforcement: enforce
+    rules:
+      - allow: { method: GET, path: "/v1/models" }
+      - allow: { method: POST, path: "/v1/chat/completions" }
+binaries:
+  - /usr/bin/curl
+  - /usr/bin/python3.12
+  - /usr/local/bin/opencode

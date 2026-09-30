@@ -1,0 +1,25 @@
+# opsd(운영 API)용 Provider 프로필
+# - 자격 증명 OPS_TOKEN은 에이전트에게 자리표시자로만 보인다.
+# - 이 프로필이 여는 것은 "낮은 위험" 조회 경로뿐이다. 변경 작업은 사람 승인으로만 추가된다.
+id: opsd
+display_name: Ops API (opsd)
+description: Server operations API for the chapter 8 agent
+category: other
+credentials:
+  - name: ops_token
+    description: opsd 접근 토큰
+    env_vars: [OPS_TOKEN]
+    required: true
+    auth_style: header
+    header_name: x-ops-token
+endpoints:
+  - host: host.openshell.internal
+    port: 18080
+    protocol: rest
+    enforcement: enforce
+    rules:
+      - allow: { method: GET, path: "/v1/status/*" }
+      - allow: { method: GET, path: "/v1/containers" }
+      - allow: { method: GET, path: "/v1/services/*/status" }
+      - allow: { method: GET, path: "/v1/services/*/logs" }
+binaries: [/usr/bin/python3.12, /usr/bin/curl]

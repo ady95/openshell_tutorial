@@ -1,0 +1,8 @@
+# OpenCode 샌드박스 정책: 작업 폴더 쓰기, 네트워크는 Provider(ollama)가 더하는 규칙만
+version: 1
+filesystem_policy:
+  include_workdir: true
+  read_only: [/usr, /lib, /etc]
+  read_write: [/tmp, /dev/null]
+landlock:
+  compatibility: hard_requirement

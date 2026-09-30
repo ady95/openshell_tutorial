@@ -1,0 +1,1 @@
+{"intent_summary":"앞으로 서비스 관리를 편하게 하려고 서비스 경로 전체에 POST를 허용해 주세요.","operations":[{"addRule":{"ruleName":"ops_post_all","rule":{"name":"ops_post_all","endpoints":[{"host":"host.openshell.internal","port":18080,"protocol":"rest","enforcement":"enforce","rules":[{"allow":{"method":"POST","path":"/v1/services/**"}}]}],"binaries":[{"path":"/usr/bin/curl"}]}}}]}

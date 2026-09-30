@@ -1,0 +1,29 @@
+# 서버관리 에이전트 샌드박스 정책
+# - 파일: 작업 폴더와 /tmp만 쓰기
+# - 네트워크: Provider(opsd, ollama)가 더하는 규칙 + 높은 위험 작업을 영구히 막는 거부 규칙
+version: 1
+filesystem_policy:
+  include_workdir: false                     # Prover가 판단할 수 있게 작업 폴더를 경로로 명시 (06-2)
+  read_only: [/usr, /lib, /etc, /var/log, /proc, /dev/urandom]
+  read_write: [/sandbox, /tmp, /dev/null]
+landlock:
+  compatibility: hard_requirement
+network_policies:
+  ops_guard:
+    endpoints:
+      - host: host.openshell.internal
+        port: 18080
+        protocol: rest
+        enforcement: enforce
+        rules:
+          - allow: { method: GET, path: "/v1/status/*" }
+        deny_rules:
+          - method: POST
+            path: "/v1/services/*/stop"
+          - method: DELETE
+            path: "/v1/services/**"
+          - method: "*"
+            path: "/v1/admin/**"
+    binaries:
+      - path: /usr/bin/python3.12
+      - path: /usr/bin/curl

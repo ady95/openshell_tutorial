@@ -19,6 +19,13 @@
 | `ch06/boundary*.yaml`, `ch06/c*.yaml` | 06-2 | Prover 경계와 후보 정책 9종 |
 | `ch06/gate.sh`, `make_subagent_policy.py`, `task-*.json` | 06-3 | 하위 에이전트 정책 관문 |
 | `ch06/risk-*.json` | 06-4 | 제안 위험 검사용 제안 4종 |
+| `images/lab-opencode/Dockerfile` | 07-4 | 실습 이미지 + OpenCode CLI |
+| `ch07/profile-ollama.yaml`, `chat.py` | 07-2 | 호스트 Ollama Provider 프로필, 최소 호출 예제 |
+| `ch07/opencode.json`, `policy-opencode.yaml`, `project/` | 07-4 | OpenCode 설정·정책·실습 프로젝트 |
+| `ch08/opsd.py` | 8장 | 운영 API (감사 기록 포함) |
+| `ch08/server_agent.py` | 8장 | 로컬 LLM 서버관리 에이전트 |
+| `ch08/profile-opsd.yaml`, `policy-server-agent.yaml`, `boundary-server.yaml` | 8장 | Provider·정책·경계 |
+| `ch08/proposal-*.json`, `destructive_probe.sh` | 08-3, 08-4 | 수동 권한 요청, 파괴 명령 시도 |
 
 ## 주의
 
