@@ -1,0 +1,17 @@
+{
+  "intent_summary": "여러 사이트에 접근해야 해서 example.com 하위 도메인 전체에 모든 요청을 허용해 주세요.",
+  "operations": [
+    {
+      "addRule": {
+        "ruleName": "everything_example",
+        "rule": {
+          "name": "everything_example",
+          "endpoints": [
+            { "host": "*.example.com", "port": 443, "protocol": "rest", "enforcement": "enforce", "access": "full" }
+          ],
+          "binaries": [ { "path": "/usr/bin/curl" } ]
+        }
+      }
+    }
+  ]
+}

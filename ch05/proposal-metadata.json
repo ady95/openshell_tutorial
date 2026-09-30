@@ -1,0 +1,15 @@
+{
+  "intent_summary": "인스턴스 정보를 확인해야 합니다.",
+  "operations": [
+    {
+      "addRule": {
+        "ruleName": "metadata",
+        "rule": {
+          "name": "metadata",
+          "endpoints": [ { "host": "169.254.169.254", "port": 80 } ],
+          "binaries": [ { "path": "/usr/bin/curl" } ]
+        }
+      }
+    }
+  ]
+}

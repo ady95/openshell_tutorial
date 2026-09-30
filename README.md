@@ -14,6 +14,8 @@
 | `ch03/policy-*.yaml` | 03-2~03-4 | 기본·잘못 넓힌·최소·작업 디렉터리 누락·실행 사용자 정책 예 |
 | `ch03/proc_probe.sh` | 03-4 | 권한 상승·격리 우회 시도 스크립트 |
 | `ch04/profile-book-echo.yaml` | 04-4 | 자격 증명 치환 실습용 Provider 프로필 (httpbin.org, 가짜 키 전용) |
+| `ch05/policy-coding.yaml` 등 4종 | 05-2 | 코딩·리서치·DevOps·서버관리 에이전트 정책 |
+| `ch05/proposal-*.json` | 05-4 | Policy Advisor 제안 예 (좁은·넓은·메타데이터) |
 
 ## 주의
 

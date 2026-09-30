@@ -1,0 +1,26 @@
+# DevOps 에이전트: 한 저장소의 Actions만 조회·실행, 웹훅·설정 변경은 거부
+# <org>/<repo>를 실제 값으로 바꿔 쓴다. GitHub 토큰은 Provider로 붙인다(04-4).
+version: 1
+filesystem_policy:
+  include_workdir: true
+  read_only: [/usr, /lib, /etc]
+  read_write: [/tmp, /dev/null]
+landlock:
+  compatibility: hard_requirement
+network_policies:
+  github_actions:
+    endpoints:
+      - host: api.github.com
+        port: 443
+        protocol: rest
+        enforcement: enforce
+        rules:
+          - allow: { method: GET, path: "/repos/example-org/example-repo/actions/**" }
+          - allow: { method: POST, path: "/repos/example-org/example-repo/actions/workflows/*/dispatches" }
+        deny_rules:
+          - method: "*"
+            path: "/repos/example-org/example-repo/hooks/**"
+          - method: "*"
+            path: "/repos/example-org/example-repo/settings/**"
+    binaries:
+      - path: /usr/bin/curl

@@ -1,0 +1,23 @@
+{
+  "intent_summary": "pip로 requests 패키지 목록을 조회하기 위해 PyPI simple 인덱스 GET만 필요합니다.",
+  "operations": [
+    {
+      "addRule": {
+        "ruleName": "pypi_simple_read",
+        "rule": {
+          "name": "pypi_simple_read",
+          "endpoints": [
+            {
+              "host": "pypi.org",
+              "port": 443,
+              "protocol": "rest",
+              "enforcement": "enforce",
+              "rules": [ { "allow": { "method": "GET", "path": "/simple/**" } } ]
+            }
+          ],
+          "binaries": [ { "path": "/usr/bin/curl" } ]
+        }
+      }
+    }
+  ]
+}
