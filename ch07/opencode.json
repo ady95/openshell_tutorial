@@ -24,6 +24,16 @@
           "options": {
             "reasoningEffort": "none"
           }
+        },
+        "qwen3.5-0.8b-16k": {
+          "name": "qwen3.5-0.8b-16k",
+          "limit": {
+            "context": 16384,
+            "output": 4096
+          },
+          "options": {
+            "reasoningEffort": "none"
+          }
         }
       }
     }
