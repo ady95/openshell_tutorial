@@ -1,0 +1,22 @@
+# 04-4 실습용 Provider 프로필
+# httpbin.org는 받은 요청 헤더를 그대로 돌려주는 공개 서비스다.
+# 자격 증명이 어디서 진짜 값으로 바뀌는지 눈으로 확인하는 용도로만 쓰고,
+# 실습에는 반드시 가짜 키를 넣는다.
+id: book-echo
+display_name: Book Echo (httpbin)
+description: 04-4 credential injection demo
+category: other
+credentials:
+  - name: api_key
+    description: 실습용 가짜 API 키
+    env_vars: [ECHO_API_KEY]
+    required: true
+    auth_style: bearer
+    header_name: authorization
+endpoints:
+  - host: httpbin.org
+    port: 443
+    protocol: rest
+    access: read-only
+    enforcement: enforce
+binaries: [/usr/bin/curl]
