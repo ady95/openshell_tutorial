@@ -1,0 +1,18 @@
+# 작업 디렉터리를 경로로 명시한 경계
+version: 1
+filesystem_policy:
+  include_workdir: false
+  read_only: [/usr, /lib, /etc]
+  read_write: [/sandbox, /tmp, /dev/null]
+landlock:
+  compatibility: hard_requirement
+network_policies:
+  github_api_read:
+    endpoints:
+      - host: api.github.com
+        port: 443
+        protocol: rest
+        enforcement: enforce
+        access: read-only
+    binaries:
+      - path: /usr/bin/curl

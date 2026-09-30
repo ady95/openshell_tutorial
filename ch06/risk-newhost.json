@@ -1,0 +1,27 @@
+{
+  "intent_summary": "예제 페이지를 읽어야 합니다.",
+  "operations": [
+    {
+      "addRule": {
+        "ruleName": "example_org",
+        "rule": {
+          "name": "example_org",
+          "endpoints": [
+            {
+              "host": "www.example.org",
+              "port": 443,
+              "protocol": "rest",
+              "enforcement": "enforce",
+              "access": "read-only"
+            }
+          ],
+          "binaries": [
+            {
+              "path": "/usr/bin/curl"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

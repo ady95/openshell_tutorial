@@ -1,0 +1,29 @@
+# 부모 에이전트의 최대 권한(경계).
+# 실행 중 샌드박스의 effective 정책과 비교할 수 있도록, 네트워크 규칙이 있을 때
+# OpenShell이 자동으로 더하는 기본 경로(/var/log, /proc, /dev/urandom)도 적어 둔다.
+version: 1
+filesystem_policy:
+  include_workdir: false
+  read_only: [/usr, /lib, /etc, /var/log, /proc, /dev/urandom]
+  read_write: [/sandbox, /tmp, /dev/null]
+landlock:
+  compatibility: hard_requirement
+network_policies:
+  github_api_read:
+    endpoints:
+      - host: api.github.com
+        port: 443
+        protocol: rest
+        enforcement: enforce
+        access: read-only
+    binaries:
+      - path: /usr/bin/curl
+  pypi_read:
+    endpoints:
+      - host: pypi.org
+        port: 443
+        protocol: rest
+        enforcement: enforce
+        access: read-only
+    binaries:
+      - path: /usr/bin/python3.12

@@ -1,0 +1,17 @@
+# audit 모드 (요청을 막지 않음)
+version: 1
+filesystem_policy:
+  read_only: [/usr, /lib, /etc]
+  read_write: [/tmp, /dev/null]
+landlock:
+  compatibility: hard_requirement
+network_policies:
+  github_api_read:
+    endpoints:
+      - host: api.github.com
+        port: 443
+        protocol: rest
+        enforcement: audit
+        access: read-only
+    binaries:
+      - path: /usr/bin/curl

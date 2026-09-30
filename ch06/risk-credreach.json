@@ -1,0 +1,27 @@
+{
+  "intent_summary": "파이썬 스크립트로도 httpbin을 조회해야 합니다.",
+  "operations": [
+    {
+      "addRule": {
+        "ruleName": "echo_python",
+        "rule": {
+          "name": "echo_python",
+          "endpoints": [
+            {
+              "host": "httpbin.org",
+              "port": 443,
+              "protocol": "rest",
+              "enforcement": "enforce",
+              "access": "read-only"
+            }
+          ],
+          "binaries": [
+            {
+              "path": "/usr/bin/python3.12"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

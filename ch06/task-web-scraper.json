@@ -1,0 +1,1 @@
+{"name": "web-scraper", "rules": [{"host": "pypi.org", "binary": "/usr/bin/python3.12", "access": "read-only"}, {"host": "news.example.com", "binary": "/usr/bin/python3.12", "access": "read-only"}]}

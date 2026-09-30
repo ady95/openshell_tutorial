@@ -1,0 +1,34 @@
+{
+  "intent_summary": "httpbin에 POST로 결과를 보고해야 합니다.",
+  "operations": [
+    {
+      "addRule": {
+        "ruleName": "echo_post",
+        "rule": {
+          "name": "echo_post",
+          "endpoints": [
+            {
+              "host": "httpbin.org",
+              "port": 443,
+              "protocol": "rest",
+              "enforcement": "enforce",
+              "rules": [
+                {
+                  "allow": {
+                    "method": "POST",
+                    "path": "/post"
+                  }
+                }
+              ]
+            }
+          ],
+          "binaries": [
+            {
+              "path": "/usr/bin/curl"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

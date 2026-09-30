@@ -16,6 +16,9 @@
 | `ch04/profile-book-echo.yaml` | 04-4 | 자격 증명 치환 실습용 Provider 프로필 (httpbin.org, 가짜 키 전용) |
 | `ch05/policy-coding.yaml` 등 4종 | 05-2 | 코딩·리서치·DevOps·서버관리 에이전트 정책 |
 | `ch05/proposal-*.json` | 05-4 | Policy Advisor 제안 예 (좁은·넓은·메타데이터) |
+| `ch06/boundary*.yaml`, `ch06/c*.yaml` | 06-2 | Prover 경계와 후보 정책 9종 |
+| `ch06/gate.sh`, `make_subagent_policy.py`, `task-*.json` | 06-3 | 하위 에이전트 정책 관문 |
+| `ch06/risk-*.json` | 06-4 | 제안 위험 검사용 제안 4종 |
 
 ## 주의
 

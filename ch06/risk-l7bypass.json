@@ -1,0 +1,24 @@
+{
+  "intent_summary": "git으로 httpbin에 접속해야 합니다.",
+  "operations": [
+    {
+      "addRule": {
+        "ruleName": "echo_git",
+        "rule": {
+          "name": "echo_git",
+          "endpoints": [
+            {
+              "host": "httpbin.org",
+              "port": 443
+            }
+          ],
+          "binaries": [
+            {
+              "path": "/usr/bin/git"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

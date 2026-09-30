@@ -1,0 +1,1 @@
+{"name": "issue-writer", "rules": [{"host": "api.github.com", "binary": "/usr/bin/curl", "access": "read-write"}]}
