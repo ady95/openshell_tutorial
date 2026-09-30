@@ -1,0 +1,8 @@
+# 최소 파일 권한: 시스템 경로 읽기 + 작업 디렉터리와 /tmp 쓰기
+version: 1
+filesystem_policy:
+  include_workdir: true
+  read_only: [/usr, /lib, /etc]
+  read_write: [/tmp, /dev/null]
+landlock:
+  compatibility: hard_requirement

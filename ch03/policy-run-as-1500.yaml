@@ -1,0 +1,10 @@
+# 샌드박스 사용자를 다른 UID로 지정
+# 주의: 사용자 정책은 기본 정책을 통째로 대체하므로 filesystem_policy도 함께 적는다.
+version: 1
+filesystem_policy:
+  include_workdir: true
+  read_only: [/usr, /lib, /etc]
+  read_write: [/tmp, /dev/null]
+process:
+  run_as_user: "1500"
+  run_as_group: "1500"

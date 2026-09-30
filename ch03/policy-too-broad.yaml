@@ -1,0 +1,6 @@
+# 잘못된 예: "읽기만 허용이니 괜찮겠지" 하고 홈과 다른 프로젝트까지 연 정책
+version: 1
+filesystem_policy:
+  include_workdir: true
+  read_only: [/usr, /lib, /etc, /home/ubuntu, /srv]
+  read_write: [/tmp]

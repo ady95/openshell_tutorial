@@ -1,0 +1,4 @@
+# 거부되는 예: root로 실행
+version: 1
+process:
+  run_as_user: "0"

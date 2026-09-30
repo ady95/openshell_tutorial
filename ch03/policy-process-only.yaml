@@ -1,0 +1,5 @@
+# 함정: process만 적으면 파일시스템 규칙이 작업 디렉터리만 남아 /bin/bash도 실행하지 못한다
+version: 1
+process:
+  run_as_user: "1500"
+  run_as_group: "1500"

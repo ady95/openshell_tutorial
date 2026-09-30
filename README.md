@@ -9,6 +9,10 @@
 |---|---|---|
 | `ch01_unprotected.sh` | 01-2 | 정책 없는 환경에서 셸 명령으로 할 수 있는 일 (가짜 홈·가짜 자격 증명 사용) |
 | `images/lab/Dockerfile` | 02-4 이후 | 실습용 샌드박스 이미지 (기본 이미지 + curl, python3, git, jq) |
+| `images/lab-target/Dockerfile` | 03-3 | 가짜 비밀 파일을 담은 공격 대상 이미지 |
+| `ch03/fs_attack.sh` | 03-3 | 샌드박스 안 파일 공격 스크립트 |
+| `ch03/policy-*.yaml` | 03-2~03-4 | 기본·잘못 넓힌·최소·작업 디렉터리 누락·실행 사용자 정책 예 |
+| `ch03/proc_probe.sh` | 03-4 | 권한 상승·격리 우회 시도 스크립트 |
 
 ## 주의
 
