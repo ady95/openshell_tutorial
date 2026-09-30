@@ -26,6 +26,7 @@
 | `ch08/server_agent.py` | 8장 | 로컬 LLM 서버관리 에이전트 |
 | `ch08/profile-opsd.yaml`, `policy-server-agent.yaml`, `boundary-server.yaml` | 8장 | Provider·정책·경계 |
 | `ch08/proposal-*.json`, `destructive_probe.sh` | 08-3, 08-4 | 수동 권한 요청, 파괴 명령 시도 |
+| `ch08/run_task.sh` | 08-6 | 에이전트 작업 실행 후 승인 회수·경계 검사 |
 
 ## 주의
 
