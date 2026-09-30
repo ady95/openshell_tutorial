@@ -34,6 +34,16 @@
           "options": {
             "reasoningEffort": "none"
           }
+        },
+        "qwen3.5-9b-16k": {
+          "name": "qwen3.5-9b-16k",
+          "limit": {
+            "context": 16384,
+            "output": 4096
+          },
+          "options": {
+            "reasoningEffort": "none"
+          }
         }
       }
     }
@@ -55,11 +65,9 @@
         "read": true,
         "edit": true,
         "bash": true,
-        "write": false,
         "glob": false,
         "grep": false,
         "list": false,
-        "patch": false,
         "webfetch": false,
         "todowrite": false,
         "todoread": false,
