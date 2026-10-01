@@ -11,5 +11,8 @@ if [ "$result" != "within_boundary" ]; then
   echo "REJECT: 하위 에이전트를 만들지 않습니다."
   exit 1
 fi
-openshell sandbox create --name "$name" --from "$image" --no-auto-providers --detach --policy "$cand" </dev/null | tail -1
+if ! openshell sandbox create --name "$name" --from "$image" --no-auto-providers --detach --policy "$cand" </dev/null; then
+  echo "CREATE_FAILED: 샌드박스를 만들지 못했습니다."
+  exit 1
+fi
 echo "APPLY: $name 생성"
